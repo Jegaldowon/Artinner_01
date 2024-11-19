@@ -150,8 +150,10 @@ private GunScript gun;
  * Incase we dont have a weapon or gun or it didnt find it, it will write into the console that it cant find a weapon.
  */
 void WeaponRotation(){
-	if(!weapon){
-		weapon = GameObject.FindGameObjectWithTag("Weapon");
+	if(!weapon)
+		{
+		// 자꾸 tag 찾으라 길래 그냥 주석 담 나중에 수정
+		// weapon = GameObject.FindGameObjectWithTag("Weapon");
 		if(weapon){
 			if(weapon.GetComponent<GunScript>()){
 				try{
@@ -159,6 +161,8 @@ void WeaponRotation(){
 				}catch(System.Exception ex){
 					print("gun not found->"+ex.StackTrace.ToString());
 				}
+				
+
 			}
 		}
 	}
